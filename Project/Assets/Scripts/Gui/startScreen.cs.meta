@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: bd7d254c42a464f4fbc1ea5de14cb1e2
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - pause_sprite1_Pause: {fileID: 21300000, guid: e48001f8aa90369448c35181cbcf10af,
+      type: 3}
+  - pause_sprite2_Play: {fileID: 21300000, guid: c2f2b1879beaa8f459916678c965e6d2,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

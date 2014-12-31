@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 0873cbabf124c6e489cf640bfa261135
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - enemy: {fileID: 100000, guid: 5544e9ea6120cde4b85de3a440e4317f, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
