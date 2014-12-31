@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour {
 		HP--;
 		if(healthBarImage.fillAmount > 0 )
 		{
-			healthBarImage.fillAmount = healthBarImage.fillAmount - 0.2f;
+			healthBarImage.fillAmount = healthBarImage.fillAmount - 0.333f;
 		}
 		if (HP == 0) {
 			Kill();
