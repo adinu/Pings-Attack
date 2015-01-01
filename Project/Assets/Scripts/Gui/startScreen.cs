@@ -90,6 +90,11 @@ public class startScreen : MonoBehaviour {
 		paused = true;
 		isGameStpoed=true;
 	}
+
+	public void startNewGame(){
+		// Restart the game
+		Application.LoadLevel(1);
+	}
 	
 	public void setSound(float sliderValue)
 	{
