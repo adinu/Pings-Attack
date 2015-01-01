@@ -8,8 +8,8 @@ public class enemyClass : MonoBehaviour {
 	public GameObject [] rewards; //0-shots  1-live  2-bomb
 	public int pointsToScore;
 	public float movmentSpeed;
-	public Sprite demaged;
-	public Sprite dead;
+	//public Sprite demaged;
+	//public Sprite dead;
 	public AudioClip[] deathClips;
 	public Vector4 oddsVector; //[0] :shots  [1]:lives [2]:bomb  [3]:empty
 	private SpriteRenderer ren;	
@@ -31,11 +31,11 @@ public class enemyClass : MonoBehaviour {
 	// Use this for initialization
 	public void Hit (int hp) {
 		HP= HP-hp;
-		if (HP == 1)
-			ren.sprite = demaged;
+		//if (HP == 1)
+			//ren.sprite = demaged;
 		if (HP <= 0) {
 			this.gameObject.collider2D.enabled = false;
-			ren.sprite = dead;
+			//ren.sprite = dead;
 			Kill();
 		}
 	}
