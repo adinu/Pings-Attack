@@ -3,6 +3,7 @@ using System.Collections;
 
 public class startScreen : MonoBehaviour {
 	public GameObject pauseMenu;				// The pause menu UI element to be activated on pause
+	public GameObject gameOverMenu;				// The game over menu UI element to be activated on pause
 	private bool paused = false;				// The boolean value to keep track of whether or not the game is currently paused
 	public Sprite pause_sprite1_Pause; // Drag your first sprite here
 	public Sprite pause_sprite2_Play; // Drag your second sprite here
@@ -76,6 +77,18 @@ public class startScreen : MonoBehaviour {
 			paused = false;
 			isGameStpoed=false;
 			//spriteRenderer.sprite = pause_sprite2_Play; // set the sprite to sprite1- play
+	}
+
+	public void gameOver()
+	{
+		Time.timeScale = 0;
+		Debug.Log ("game over");
+		// Activate the pause menu UI element
+		if (gameOverMenu != null)
+			gameOverMenu.SetActive(true);
+		
+		paused = true;
+		isGameStpoed=true;
 	}
 	
 	public void setSound(float sliderValue)

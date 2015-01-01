@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour {
 	private float FPS;
 	private float timeLeft;
 	int currentBull;
+	public GameObject guiGO;
 
 	void Start(){
 		currentBull = 0;
@@ -107,7 +108,12 @@ public class PlayerController : MonoBehaviour {
 
 
 	private void Kill (){
+		//Call display game over menu
+		guiGO.GetComponent<startScreen>().gameOver();
+
 		Destroy (this.gameObject);
+		//Time.timeScale = 0; //pause
+
 	}
 
 	public void reactToReward(Enum_RewardType rewardType){
@@ -129,7 +135,7 @@ public class PlayerController : MonoBehaviour {
 			if (HP < maxHP) { //We can still add lives
 					HP++;
 
-				healthBarImage.fillAmount = healthBarImage.fillAmount + 0.2f;
+				healthBarImage.fillAmount = healthBarImage.fillAmount + 0.333f;
 			}
 	}
 
