@@ -35,18 +35,21 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {	
 		if (GameController.GetComponent<Controller> ().getShotsCount () > 0) {
+			/*
 			if (!Application.isMobilePlatform) {	
 				if (Input.GetMouseButtonDown (0)) {  
 					Instantiate (bullets [currentBull], this.transform.position + offsetBullet, Quaternion.identity);
 					GameController.GetComponent<Controller> ().addShots (-1);
 				}
 			}else {
+
+			*/
 				timeLeft -= Time.deltaTime;
 				if ( timeLeft < 0 ){
 					Instantiate (bullets [currentBull], this.transform.position + offsetBullet, Quaternion.identity);
 					timeLeft = FPS;
 				}
-			}
+			//}
 
 		}
 	}
