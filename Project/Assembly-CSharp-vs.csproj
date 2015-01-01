@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\CreateEnemeyWaves.cs" />
      <Compile Include="Assets\DestroyAfterTime.cs" />
+     <Compile Include="Assets\EdgeTrigger.cs" />
      <Compile Include="Assets\EnemyReward.cs" />
      <Compile Include="Assets\ParachuteBeh.cs" />
      <Compile Include="Assets\PlaneAnimationScript.cs" />

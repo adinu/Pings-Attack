@@ -7,18 +7,18 @@ public class enemyClass : MonoBehaviour {
 	public GameObject points;
 	public GameObject [] rewards; //0-shots  1-live  2-bomb
 	public int pointsToScore;
-	public float movmentSpeed;
 	//public Sprite demaged;
 	//public Sprite dead;
 	public AudioClip[] deathClips;
 	public Vector4 oddsVector; //[0] :shots  [1]:lives [2]:bomb  [3]:empty
-	private SpriteRenderer ren;	
+	//private SpriteRenderer ren;	
 	private Animator anim;
+	public bool facingRight;
 		
 
 	void Start(){
 		anim = GetComponent<Animator> ();
-		ren = GetComponent<SpriteRenderer> ();
+		//ren = GetComponent<SpriteRenderer> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
 		GameObject [] rewardGO = GameObject.FindGameObjectsWithTag ("enemy");
 		foreach(GameObject gobject in rewardGO)
@@ -103,4 +103,5 @@ public class enemyClass : MonoBehaviour {
 	private void DestroyThis(){
 		Destroy (this.gameObject);
 	}
+
 }
