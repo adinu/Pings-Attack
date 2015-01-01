@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\General\Controller.cs" />
      <Compile Include="Assets\Scripts\General\DestroyOnCollision.cs" />
      <Compile Include="Assets\Scripts\Gui\MainMenuManager.cs" />
+     <Compile Include="Assets\Scripts\Gui\SoundOnOff.cs" />
      <Compile Include="Assets\Scripts\Gui\display_score.cs" />
      <Compile Include="Assets\Scripts\Gui\openSceneScript.cs" />
      <Compile Include="Assets\Scripts\Gui\startScreen.cs" />

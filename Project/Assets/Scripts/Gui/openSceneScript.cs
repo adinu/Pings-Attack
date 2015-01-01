@@ -9,20 +9,20 @@ public class openSceneScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		bearSleeping.Play ();
-
-
+		Invoke("suspendNextScene", TimeInSecondsBeforNExtSceneStarts);
+		
 	}
 	
-	IEnumerator suspendNextScene()
+	void suspendNextScene()
 	{
-		yield return new WaitForSeconds(TimeInSecondsBeforNExtSceneStarts);
+
 		Application.LoadLevel(1);
 	}
 
 	
 	// Update is called once per frame
 	void Update () {
-		suspendNextScene ();
+
 	
 	}
 }

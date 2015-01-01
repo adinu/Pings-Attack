@@ -23,14 +23,14 @@ public class startScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Pause game
-		if (Input.GetButtonDown("Pause"))
-		{
-			paused = !paused;
-			if (paused)
-				Pause();
-			else
-				Play();
-		}
+//		if (Input.GetButtonDown("Pause"))
+//		{
+//			paused = !paused;
+//			if (paused)
+//				Pause();
+//			else
+//				Play();
+//		}
 	}
 	
 	public void RestartLevel()

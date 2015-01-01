@@ -44,7 +44,7 @@ public class MainMenuManager : MonoBehaviour
 
 		if (fadeIn && fadePanel.color.a < 0.01f)
 		{
-			Application.LoadLevel(1);
+			Application.LoadLevel(2);
 		}
 	}
 

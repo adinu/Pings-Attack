@@ -7,7 +7,7 @@ public class PlaneAnimationScript : MonoBehaviour {
 	public float sampleTime;
 	private float timeLeft;
 	private int i;
-	private SpriteRenderer renderer;
+	private new SpriteRenderer renderer;
 	// Use this for initialization
 	void Start () {
 		timeLeft = sampleTime;
