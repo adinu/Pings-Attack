@@ -17,6 +17,13 @@ public class enemyClass : MonoBehaviour {
 		
 
 	void Start(){
+		//Check if enemy has parachute,if he has pick random color for it.
+		foreach (SpriteRenderer t in GetComponentsInChildren<SpriteRenderer> ()){
+			if(t.sprite.name == "prop_parachute")
+				t.color =  new Color(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f), 1f);
+		}
+
+
 		anim = GetComponent<Animator> ();
 		//ren = GetComponent<SpriteRenderer> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
