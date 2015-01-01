@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\General\DestroyOnCollision.cs" />
      <Compile Include="Assets\Scripts\Gui\MainMenuManager.cs" />
      <Compile Include="Assets\Scripts\Gui\display_score.cs" />
+     <Compile Include="Assets\Scripts\Gui\openSceneScript.cs" />
      <Compile Include="Assets\Scripts\Gui\startScreen.cs" />
      <Compile Include="Assets\Scripts\Hero\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Michal test\BackgroundParallax.cs" />
