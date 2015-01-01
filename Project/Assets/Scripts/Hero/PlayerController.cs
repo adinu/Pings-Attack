@@ -16,15 +16,17 @@ public class PlayerController : MonoBehaviour {
 	private Image healthBarImage;
 	private GameObject GameController; 
 	private GameObject currentBullet;
-	public float FPS = 1;
+	private float FPS;
 	private float timeLeft;
+	int currentBull;
 
 	void Start(){
+		currentBull = 0;
+		FPS = bullets [currentBull].gameObject.GetComponent<HeroShot> ().getFPS ();
 		anim = GetComponent<Animator> ();
 		facingRight = true;
 		healthBarImage = GameObject.FindGameObjectWithTag ("HealthBar").GetComponent<Image> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
-		currentBullet = bullets [0];
 		timeLeft = FPS;
 
 	}
@@ -35,13 +37,13 @@ public class PlayerController : MonoBehaviour {
 		if (GameController.GetComponent<Controller> ().getShotsCount () > 0) {
 			if (!Application.isMobilePlatform) {	
 				if (Input.GetMouseButtonDown (0)) {  
-					Instantiate (currentBullet, this.transform.position + offsetBullet, Quaternion.identity);
+					Instantiate (bullets [currentBull], this.transform.position + offsetBullet, Quaternion.identity);
 					GameController.GetComponent<Controller> ().addShots (-1);
 				}
 			}else {
 				timeLeft -= Time.deltaTime;
 				if ( timeLeft < 0 ){
-					Instantiate (currentBullet, this.transform.position + offsetBullet, Quaternion.identity);
+					Instantiate (bullets [currentBull], this.transform.position + offsetBullet, Quaternion.identity);
 					timeLeft = FPS;
 				}
 			}
@@ -102,6 +104,7 @@ public class PlayerController : MonoBehaviour {
 
 	public void Hit () {
 		HP--;
+		downgradeShots ();
 		if(healthBarImage.fillAmount > 0 )
 		{
 			healthBarImage.fillAmount = healthBarImage.fillAmount - 0.333f;
@@ -125,9 +128,8 @@ public class PlayerController : MonoBehaviour {
 						addLive();
 						break;
 				case Enum_RewardType.SHOTS:
-					GameController.GetComponent<Controller>().addShots(30);
-				
-				break;
+						upgradeShots();
+						break;
 				}
 		}
 
@@ -138,6 +140,26 @@ public class PlayerController : MonoBehaviour {
 
 				healthBarImage.fillAmount = healthBarImage.fillAmount + 0.2f;
 			}
+	}
+
+	//Upgrade Shots
+	private void upgradeShots ()
+	{
+		if (currentBull < bullets.Length - 1) 
+		{
+			currentBull++;
+			FPS = bullets [currentBull].gameObject.GetComponent<HeroShot> ().getFPS ();
+		}
+	}
+	
+	//Down grade shots
+	private void downgradeShots ()
+	{
+		if (currentBull > 0) 
+		{
+			currentBull--;
+			FPS = bullets [currentBull].gameObject.GetComponent<HeroShot> ().getFPS ();
+		}
 	}
 
 

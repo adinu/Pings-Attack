@@ -8,9 +8,12 @@ public class HeroShot : MonoBehaviour {
 	public float force;
 	public ENUM_bulletType eBulletType;
 	public Vector3 direction;
+	public float FPS;
 
 	
 	void Start(){
+		if (eBulletType == ENUM_bulletType.specialShot)
+			return;
 		//Vector3 direction = new Vector3 (0, 1, 0);  
 		this.gameObject.rigidbody2D.AddForce (direction *force);
 
@@ -22,14 +25,22 @@ public class HeroShot : MonoBehaviour {
 	}
 	
 	void Update(){
+		if (eBulletType == ENUM_bulletType.specialShot)
+			return;
 		timeLeft -= Time.deltaTime;
 		if ( timeLeft < 0 )
 			Destroy(this.gameObject);
 	}
 
 	void FixedUpdate () {  //decrease shot size as time progresses
+		if (eBulletType == ENUM_bulletType.specialShot)
+			return;
 		transform.localScale =transform.lossyScale*0.99f;
 		
+	}
+
+	public float getFPS(){
+		return FPS;
 	}
 
 }
