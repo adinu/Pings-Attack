@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CreateEnemeyWaves.cs" />
      <Compile Include="Assets\DestroyAfterTime.cs" />
+     <Compile Include="Assets\EdgeTrigger.cs" />
      <Compile Include="Assets\EnemyReward.cs" />
      <Compile Include="Assets\ParachuteBeh.cs" />
      <Compile Include="Assets\PlaneAnimationScript.cs" />
@@ -87,6 +89,7 @@
      <Compile Include="Assets\Scripts\Shots\HeroShot.cs" />
      <Compile Include="Assets\Scripts\display_shots.cs" />
      <Compile Include="Assets\Tutorial.cs" />
+     <Compile Include="Assets\createEnemeiesWave.cs" />
      <Compile Include="Assets\enemyClass.cs" />
      <Compile Include="Assets\enemyDemage.cs" />
      <Compile Include="Assets\pointsAnimation.cs" />

@@ -7,18 +7,25 @@ public class enemyClass : MonoBehaviour {
 	public GameObject points;
 	public GameObject [] rewards; //0-shots  1-live  2-bomb
 	public int pointsToScore;
-	public float movmentSpeed;
-	public Sprite demaged;
-	public Sprite dead;
+	//public Sprite demaged;
+	//public Sprite dead;
 	public AudioClip[] deathClips;
 	public Vector4 oddsVector; //[0] :shots  [1]:lives [2]:bomb  [3]:empty
-	private SpriteRenderer ren;	
+	//private SpriteRenderer ren;	
 	private Animator anim;
+	public bool facingRight;
 		
 
 	void Start(){
+		//Check if enemy has parachute,if he has pick random color for it.
+		foreach (SpriteRenderer t in GetComponentsInChildren<SpriteRenderer> ()){
+			if(t.sprite.name == "prop_parachute")
+				t.color =  new Color(Random.Range(0f,1f), Random.Range(0f,1f), Random.Range(0f,1f), 1f);
+		}
+
+
 		anim = GetComponent<Animator> ();
-		ren = GetComponent<SpriteRenderer> ();
+		//ren = GetComponent<SpriteRenderer> ();
 		GameController = GameObject.FindGameObjectWithTag ("GameController");
 		GameObject [] rewardGO = GameObject.FindGameObjectsWithTag ("enemy");
 		foreach(GameObject gobject in rewardGO)
@@ -31,11 +38,11 @@ public class enemyClass : MonoBehaviour {
 	// Use this for initialization
 	public void Hit (int hp) {
 		HP= HP-hp;
-		if (HP == 1)
-			ren.sprite = demaged;
+		//if (HP == 1)
+			//ren.sprite = demaged;
 		if (HP <= 0) {
 			this.gameObject.collider2D.enabled = false;
-			ren.sprite = dead;
+			//ren.sprite = dead;
 			Kill();
 		}
 	}
@@ -103,4 +110,5 @@ public class enemyClass : MonoBehaviour {
 	private void DestroyThis(){
 		Destroy (this.gameObject);
 	}
+
 }

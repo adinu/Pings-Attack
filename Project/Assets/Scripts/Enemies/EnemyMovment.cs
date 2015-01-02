@@ -8,6 +8,7 @@ public class EnemyMovment : MonoBehaviour {
 	private Vector3 directionOfMovment;
 	public float WaveMovementTime;
 	private float waveTime;
+	public bool facingRight;
 	
 	public Movment movment;
 
@@ -38,5 +39,13 @@ public class EnemyMovment : MonoBehaviour {
 
 	public Movment getMovmentType(){
 		return movment;
+	}
+
+	public void Flip(){
+		facingRight = !facingRight;
+		Vector3 scale = this.gameObject.transform.localScale;
+		scale.x *= -1;
+		transform.localScale = scale;
+		
 	}
 }
